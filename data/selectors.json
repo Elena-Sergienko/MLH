@@ -1,5 +1,8 @@
 {
-  "label": ".ant-form-item-required",
+  "header": "//h3",
+  "description": "//h3/following-sibling::p",
+  "labelsNameGenAgeType": ".ant-form-item-required",
+  "labelImage": "//label[@title='5. Upload an image (optional)']",
   "name": "#name",
   "gender": ".ant-radio",
   "age": "#age",
@@ -9,5 +12,4 @@
   "storyClick": ".ant-select-show-arrow",
   "storyType": ".ant-select-item-option",
   "tryAgain": ".btn-primary"
-
 }

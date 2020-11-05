@@ -1,66 +1,99 @@
 const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
+const data = require('../../data/testData.json');
 
-describe('My Little Hero', function () { //define suite title by passing a string
+describe('My Little Hero', function () {
 
-    describe('Getting to the page', function () { //define sub-suite title by passing a string
-
-        it('TC-001 Title is correct ', function () { //define test title by passing a string
-            browser.url('https://qa-apps.netlify.app/app_my_hero'); //open baseUrl
-            let title = browser.getTitle(); //get page title and assign it to the "title" variable
-            // browser.pause(2000); //just pause to visually see that something is happening on the page
-            expect(title).toEqual('MLH trial'); //compare {title} (actual) and "MLH trial" (expected)
-        });
-
+    beforeEach(() => {
+        browser.url('https://qa-apps.netlify.app/app_my_hero');
     });
 
-    describe('Labels exist', function () {
+    describe('Title is correct', function () {
 
-        it('TC-002 Label for name', function () {
-            const label = $$(sel.label)[0].isDisplayed();
+        it('TC-1.001 Verify that title is "MLH trial"', function () {
+            const title = browser.getTitle();
+            expect(title).toEqual(exp.title);
+        });
+    });
+
+    describe('Header is displayed and correct', function () {
+
+        it('TC-1.002 Verify that header is present', function () {
+            const header = $(sel.header).isDisplayed();
+            expect(header).toEqual(true);
+        });
+
+        it('TC-1.003 Verify that header is "My Little Hero"', function () {
+            const header = $(sel.header).getText();
+            expect(header).toEqual(exp.header);
+        });
+    });
+
+    describe('Description is displayed and correct', function () {
+        it('TC-1.004 Verify that text is preset', function () {
+            const description = $(sel.description).isDisplayed();
+            expect(description).toEqual(true);
+        });
+
+        it('TC-1.005 Verify that text is "Let\'s create your own HERO! It\'s super easy with our application!"', function () {
+            const description = $(sel.description).getText();
+            expect(description).toEqual(exp.description);
+        });
+    });
+
+    describe('Labels displayed', function () {
+
+        it('TC-2.001 Verify that Label 1 is present ', function () {
+            const label = $$(sel.labelsNameGenAgeType)[data.labels.name].isDisplayed();
             expect(label).toEqual(true);
         });
 
-        it('TC-003 Label for gender', function () {
-            const label = $$(sel.label)[1].isDisplayed();
+        it('TC-3.001 Verify that Label 2 is present ', function () {
+            const label = $$(sel.labelsNameGenAgeType)[data.labels.gender].isDisplayed();
             expect(label).toEqual(true);
         });
 
-        it('TC-004 Label for age', function () {
-            const label = $$(sel.label)[2].isDisplayed();
+        it('TC-4.001 Verify that Label 3 is present ', function () {
+            const label = $$(sel.labelsNameGenAgeType)[data.labels.age].isDisplayed();
             expect(label).toEqual(true);
         });
 
-        it('TC-005 Label for story', function () {
-            const label = $$(sel.label)[3].isDisplayed();
+        it('TC-5.001 Verify that Label 4 is present ', function () {
+            const label = $$(sel.labelsNameGenAgeType)[data.labels.type].isDisplayed();
             expect(label).toEqual(true);
         });
 
+        it('TC-6.001 Verify that Label 5 is present', function () {
+            const label = $(sel.labelImage).isDisplayed();
+            expect(label).toEqual(true);
+        });
     });
 
     describe('Labels are correct', function () {
 
-        it('TC-006 Label for name = 1. What is your HERO\'s name?', function () {
-            const text = $$(sel.label)[0].getAttribute('title');
+        it('TC-2.002 Verify that text for Label 1 is <1. What is your Hero\'s name?>', function () {
+            const text = $$(sel.labelsNameGenAgeType)[data.labels.name].getAttribute('title');
             expect(text).toEqual(exp.labelName);
         });
 
-        it('TC-007 Label for gender = 2. Please choose a gender.', function () {
-            const text = $$(sel.label)[1].getAttribute('title');
+        it('TC-3.002 Verify that text for Label 2 is <2. Please choose a gender.>', function () {
+            const text = $$(sel.labelsNameGenAgeType)[data.labels.gender].getAttribute('title');
             expect(text).toEqual(exp.labelGender);
         });
 
-        it('TC-008 Label for age = 3. How old is your hero?', function () {
-            const text = $$(sel.label)[2].getAttribute('title');
+        it('TC-4.002 Verify that text for Label 3 is <3. How old is your Hero?>', function () {
+            const text = $$(sel.labelsNameGenAgeType)[data.labels.age].getAttribute('title');
             expect(text).toEqual(exp.labelAge);
         });
 
-        it('TC-009 Label for story = 4. What type of story would you like to read?', function () {
-            const text = $$(sel.label)[3].getText();
+        it('TC-5.002 Verify that text for Label 4 is <4. What type of story would you like to read?>', function () {
+            const text = $$(sel.labelsNameGenAgeType)[data.labels.type].getText();
             expect(text).toEqual(exp.labelStory);
         });
 
+        it('TC-6.002 Verify that text for Label 5 is <5. Upload an image (optional).>', function () {
+            const text = $(sel.labelImage).getText();
+            expect(text).toEqual(exp.labelImage);
+        });
     });
-
-
 });

@@ -1,4 +1,11 @@
 {
+  "labels": {
+    "name": "0",
+    "gender": "1",
+    "age": "2",
+    "type": "3",
+    "image": "4"
+  },
   "name": "LadyBug",
   "gender": {
     "he": 0,
