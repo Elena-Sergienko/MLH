@@ -96,4 +96,22 @@ describe('My Little Hero', function () {
             expect(text).toEqual(exp.labelImage);
         });
     });
+
+    describe('Texts of radio buttons (hi she it) are correct', function () {
+        it('TC-3.010 Verify that text for radio button he is correct', function () {
+            const text = $$(sel.textHeSheIt)[data.gender.he].getText();
+            expect(text).toEqual(exp.gender.he);
+        });
+
+        it('TC-3.011 Verify that text for radio button she is correct', function () {
+            const text = $$(sel.textHeSheIt)[data.gender.she].getText();
+            expect(text).toEqual(exp.gender.she);
+        });
+
+        it('TC-3.012 Verify that text for radio button it is correct', function () {
+            const text = $$(sel.textHeSheIt)[data.gender.it].getText();
+            expect(text).toEqual(exp.gender.it);
+        });
+
+    });
 });
