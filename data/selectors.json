@@ -22,5 +22,12 @@
   "storyType": ".ant-select-item-option",
   "tryAgain": ".btn-primary",
   "tryAgainButton": "//a[@class='btn btn-primary']",
-  "textOfStory": "//p[@class='card-text']"
+  "textOfStory": "//p[@class='card-text']",
+  "ageClick": {
+    "up": "//span[@class='ant-input-number-handler ant-input-number-handler-up']",
+    "down": "//span[@class='ant-input-number-handler ant-input-number-handler-down']"
+  },
+  "alert": {
+    "age": "//div[@role='alert']"
+  }
 }

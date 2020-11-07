@@ -28,7 +28,15 @@
   "ages": {
     "123": "123",
     "100500": "100500",
-    "567": "567"
+    "567": "567",
+    "20": "20",
+    "5": "5",
+    "twelve": "123456789012",
+    "thirteen": "1234567890123",
+    "negative": "-1",
+    "floating": "150.6",
+    "specialCharacter": "150#",
+    "withLetter": "150w"
   },
   "storyType": {
     "OvercomingTheMonster": 0,
