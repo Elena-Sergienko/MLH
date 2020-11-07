@@ -10,31 +10,31 @@ describe('Regression. Age', function () {
 
     describe('Element Age', function () {
         it('TC-4.005 Verify that integer increases by 1 if clicking <+> on spinner button', function () {
-            $(sel.inputFields.age).setValue(data.ages["20"]);
+            $(sel.inputFields.age).setValue(data.ages.n20);
             $(sel.ageClick.up).click();
             $(sel.ageClick.up).click();
             const age = $(sel.inputFields.age).getValue();
-            expect(age).toEqual(exp.ages["22"]);
+            expect(age).toEqual(exp.ages.n22);
         });
 
         it('TC-4.006 Verify that number decreases by 1 if clicking <-> on spinner button', function () {
-            $(sel.inputFields.age).setValue(data.ages["20"]);
+            $(sel.inputFields.age).setValue(data.ages.n20);
             $(sel.ageClick.down).click();
             $(sel.ageClick.down).click();
             const age = $(sel.inputFields.age).getValue();
-            expect(age).toEqual(exp.ages["18"]);
+            expect(age).toEqual(exp.ages.n18);
         });
 
         it('TC-4.007 Verify that when input field is empty and <+> is clicked then the value is 1', function () {
             $(sel.ageClick.up).click();
             const age = $(sel.inputFields.age).getValue();
-            expect(age).toEqual(exp.ages["1"]);
+            expect(age).toEqual(exp.ages.n1);
         });
 
         it('TC-4.008 Verify that input field accepts a 1-digit integer', function () {
-            $(sel.inputFields.age).setValue(data.ages["5"]);
+            $(sel.inputFields.age).setValue(data.ages.n5);
             const age = $(sel.inputFields.age).getValue();
-            expect(age).toEqual(exp.ages["5"]);
+            expect(age).toEqual(exp.ages.n5);
         });
 
         it('TC-4.009 Verify that input field accepts a 1-digit integer', function () {
@@ -51,13 +51,13 @@ describe('Regression. Age', function () {
         });
 
         it('TC-4.012 Verify that if input value is a negative integer, submission is not allowed', function () {
-            inputValues4(data.names.shrek, data.gender.he, data.ages.negative, data.storyType.Comedy);
+            inputValues4(data.names.shrek, data.gender.he, data.ages.negative, data.typeOfStory.comedy);
             const submitAllowed = $(sel.createButton).isEnabled();
             expect(submitAllowed).toEqual(false);
         });
 
         it('TC-4.013 Verify that if input value is a floating number, submission is not allowed ', function () {
-            inputValues4(data.names.shrek, data.gender.he, data.ages.floating, data.storyType.Comedy);
+            inputValues4(data.names.shrek, data.gender.he, data.ages.floating, data.typeOfStory.comedy);
             const submitAllowed = $(sel.createButton).isEnabled();
             expect(submitAllowed).toEqual(false);
         });
@@ -65,13 +65,13 @@ describe('Regression. Age', function () {
         it('TC-4.014 Verify that input field doesn\'t accept a special character', function () {
             $(sel.inputFields.age).setValue(data.ages.specialCharacter);
             const age = $(sel.inputFields.age).getValue();
-            expect(age).toEqual(exp.ages["150"])
+            expect(age).toEqual(exp.ages.n150);
         });
 
         it('TC-4.015 Verify that input field doesn\'t accept a letter', function () {
             $(sel.inputFields.age).setValue(data.ages.withLetter);
             const age = $(sel.inputFields.age).getValue();
-            expect(age).toEqual(exp.ages["150"])
+            expect(age).toEqual(exp.ages.n150);
         });
     });
 });

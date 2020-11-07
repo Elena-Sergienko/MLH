@@ -9,7 +9,6 @@ describe('My Little Hero', function () {
     });
 
     describe('Title is correct', function () {
-
         it('TC-1.001 Verify that title is "MLH trial"', function () {
             const title = browser.getTitle();
             expect(title).toEqual(exp.title);
@@ -17,7 +16,6 @@ describe('My Little Hero', function () {
     });
 
     describe('Header is displayed and correct', function () {
-
         it('TC-1.002 Verify that header is present', function () {
             const header = $(sel.header).isDisplayed();
             expect(header).toEqual(true);
@@ -112,6 +110,5 @@ describe('My Little Hero', function () {
             const text = $$(sel.textHeSheIt)[data.gender.it].getText();
             expect(text).toEqual(exp.gender.it);
         });
-
     });
 });

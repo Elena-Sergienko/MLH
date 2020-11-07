@@ -13,18 +13,16 @@ describe('Checking the main functionality', function () {
     describe('Happy path', function () {
 
         it('TC-7.007 Verify that User can read the story after submitting with choice type of story "Comedy"', function () {
-            inputValues4(data.names.LadyBug007, data.gender.she, data.ages["567"], data.storyType.Comedy);
+            inputValues4(data.names.LadyBug007, data.gender.she, data.ages.n5, data.typeOfStory.comedy);
             $(sel.createButton).click();
-            browser.pause(5000)
             const tryAgain = $(sel.tryAgain).isDisplayed();
             expect(tryAgain).toEqual(true);
         });
     });
 
-    xdescribe('Other paths', function () {
-
+    describe('Other paths', function () {
         it('TC xxx ', function () {
-            inputValues4andClick(data.names, data.gender.he, data.ages, data.storyType.OvercomingTheMonster);
+            inputValues4andClick(data.names.LadyBug, data.gender.he, data.ages.n123, data.typeOfStory.overcomingTheMonster);
             const tryAgain = $(sel.tryAgain).isDisplayed();
             expect(tryAgain).toEqual(true);
         });

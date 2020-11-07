@@ -19,7 +19,7 @@
   "storyTypeArray": "//div[@class='ant-select-item-option-content']",
   "createButton": ".ant-btn",
   "storyClick": ".ant-select-show-arrow",
-  "storyType": ".ant-select-item-option",
+  "typeOfStory": ".ant-select-item-option",
   "tryAgain": ".btn-primary",
   "tryAgainButton": "//a[@class='btn btn-primary']",
   "textOfStory": "//p[@class='card-text']",

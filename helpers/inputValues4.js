@@ -5,7 +5,7 @@ function inputValues4 (name, gender, age, storyType){
     $$(sel.inputFields.gender)[gender].click();
     $(sel.inputFields.age).setValue(age);
     $(sel.inputFields.story).click();
-    $$(sel.storyType)[storyType].click();
+    $$(sel.typeOfStory)[storyType].click();
 }
 
 module.exports = inputValues4;

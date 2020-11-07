@@ -20,21 +20,22 @@
     "it": "it"
   },
   "typeOfStory": {
-    "OvercMonster": "Overcoming the Monster",
-    "Rebirth": "Rebirth",
-    "Quest": "Quest",
-    "Journey": "Journey and Return",
-    "RagsRiches": "Rags and Riches",
-    "Tragedy": "Tragedy",
-    "Comedy": "Comedy"
+    "overcomingMonster": "Overcoming the Monster",
+    "rebirth": "Rebirth",
+    "quest": "Quest",
+    "journey": "Journey and Return",
+    "ragsRiches": "Rags and Riches",
+    "tragedy": "Tragedy",
+    "comedy": "Comedy"
   },
   "name": "The Hero",
   "ages": {
-    "22": "22",
-    "18": "18",
-    "1": "1",
-    "5": "5",
+    "n22": "22",
+    "n100500": "100500",
+    "n18": "18",
+    "n1": "1",
+    "n5": "5",
     "twelve": "123456789012",
-    "150": "150"
+    "n150": "150"
   }
 }
