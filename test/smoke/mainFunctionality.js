@@ -6,23 +6,25 @@ const inputValues4andClick = require('../../helpers/inputValues4andClick');
 
 
 describe('Checking the main functionality', function () {
-    beforeEach(()=> {
+    beforeEach(() => {
         browser.url('https://qa-apps.netlify.app/app_my_hero');
     });
 
     describe('Happy path', function () {
 
-        it('TC-021 Create button is clickable after 1-4 are filled in', function() {
-            inputValues4(data.name, data.gender.she, data.age, data.storyType.Comedy);
-            const create = $(sel.create).isEnabled();
-            expect(create).toEqual(true);
+        it('TC-7.007 Verify that User can read the story after submitting with choice type of story "Comedy"', function () {
+            inputValues4(data.names.LadyBug007, data.gender.she, data.ages["567"], data.storyType.Comedy);
+            $(sel.createButton).click();
+            browser.pause(5000)
+            const tryAgain = $(sel.tryAgain).isDisplayed();
+            expect(tryAgain).toEqual(true);
         });
     });
 
-    describe('Other paths', function () {
+    xdescribe('Other paths', function () {
 
-        it('TC-022 ', function() {
-            inputValues4andClick(data.name, data.gender.he, data.age, data.storyType.OvercomingTheMonster);
+        it('TC xxx ', function () {
+            inputValues4andClick(data.names, data.gender.he, data.ages, data.storyType.OvercomingTheMonster);
             const tryAgain = $(sel.tryAgain).isDisplayed();
             expect(tryAgain).toEqual(true);
         });

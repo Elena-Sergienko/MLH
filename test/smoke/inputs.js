@@ -1,6 +1,8 @@
 const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
-const data = require('../../data/testData.json')
+const data = require('../../data/testData.json');
+const inputValues4 = require('../../helpers/inputValues4');
+
 
 describe('Inputs', function () {
     beforeEach(() => {
@@ -89,4 +91,49 @@ describe('Inputs', function () {
         });
     });
 
+    describe('Input fields accept', function () {
+        it('TC-2.005 Verify that input field accepts lower case letters', function () {
+            $(sel.inputFields.name).setValue(data.names.shrek);
+            const getValue = $(sel.inputFields.name).getValue();
+            expect(getValue).toEqual(data.names.shrek);
+        });
+
+        it('TC-4.011 Verify that input field accepts between 1-digit integer - 12-digit integer', function () {
+            $(sel.inputFields.age).setValue(data.ages["100500"]);
+            const getValue = $(sel.inputFields.age).getValue();
+            expect(getValue).toEqual(data.ages["100500"]);
+        });
+
+        it('TC-5.005 Verify that dropdown expands', function () {
+            $(sel.storyClick).click();
+            const genre = $$(sel.storyDropDownOptions).length;
+            expect(genre).toEqual(7);
+        });
+
+        it('TC-5.012 Verify that dropdown contains option Comedy', function () {
+            $(sel.storyClick).click();
+            $$(sel.storyTypeArray)[data.storyType.Comedy].click();
+            const comedy = $(sel.inputFields.story).getText();
+            expect(comedy).toEqual(exp.typeOfStory.Comedy);
+        });
+
+        xit('TC-6.005 Verify that upon clicking on browse choosing a file from the computer is enabled', function () {
+            inputValues4(data.names.shrek, data.gender.he, data.ages["123"], data.storyType.Comedy);
+
+            const inputDiv = $('.ant-upload input');
+            const submitBtn = $(sel.createButton);
+            const filePath = path.join(__dirname, '../../data/shrek.png');
+            const remoteFilePath = browser.uploadFile(filePath);
+            browser.execute(function () {
+                document.getElementsByTagName('input')[6].style.display = 'block';
+            });
+
+            inputDiv.waitForDisplayed();
+            inputDiv.setValue(remoteFilePath);
+            submitBtn.click();
+
+            const textStory = $(sel.textOfStory).isDisplayed();
+            expect(textStory).toEqual(true);
+        });
+    });
 });

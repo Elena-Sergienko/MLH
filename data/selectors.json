@@ -15,8 +15,12 @@
   "placeholderType": "//span[@class='ant-select-selection-placeholder']",
   "placeholderImage": "//span[@role='img']/following-sibling::div[@style='font-size: 15px;']",
   "storyArrow": "ant-select ant-select-single ant-select-show-arrow",
+  "storyDropDownOptions": "//div[@class='rc-virtual-list-holder-inner']/div[@aria-selected]",
+  "storyTypeArray": "//div[@class='ant-select-item-option-content']",
   "createButton": ".ant-btn",
   "storyClick": ".ant-select-show-arrow",
   "storyType": ".ant-select-item-option",
-  "tryAgain": ".btn-primary"
+  "tryAgain": ".btn-primary",
+  "tryAgainButton": "//a[@class='btn btn-primary']",
+  "textOfStory": "//p[@class='card-text']"
 }

@@ -18,5 +18,15 @@
     "he": "he",
     "she": "she",
     "it": "it"
-  }
+  },
+  "typeOfStory": {
+    "OvercMonster": "Overcoming the Monster",
+    "Rebirth": "Rebirth",
+    "Quest": "Quest",
+    "Journey": "Journey and Return",
+    "RagsRiches": "Rags and Riches",
+    "Tragedy": "Tragedy",
+    "Comedy": "Comedy"
+  },
+  "name": "The Hero"
 }
