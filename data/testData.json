@@ -31,6 +31,7 @@
     "n567": "567",
     "n20": "20",
     "n5": "5",
+    "n230": "230",
     "twelve": "123456789012",
     "thirteen": "1234567890123",
     "negative": "-1",
@@ -46,5 +47,10 @@
     "ragsRiches": 4,
     "tragedy": 5,
     "comedy": 6
+  },
+  "images": {
+    "shrekPng": "../data/shrek.png",
+    "shrekJpeg": "../data/shrekJpeg.jpeg",
+    "ladyBugJpeg": "../data/ladyBug.jpeg"
   }
 }
