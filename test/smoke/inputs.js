@@ -2,6 +2,7 @@ const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
 const data = require('../../data/testData.json');
 const inputValues4 = require('../../helpers/inputValues4');
+const path = require('path');
 
 
 describe('Inputs', function () {
@@ -71,7 +72,6 @@ describe('Inputs', function () {
             const placeHolder = $(sel.placeholderImage).getText();
             expect(placeHolder).toEqual(exp.placeholders.image);
         });
-
     });
 
     describe('Radio buttons are Clickable', function () {
@@ -99,9 +99,9 @@ describe('Inputs', function () {
         });
 
         it('TC-4.011 Verify that input field accepts between 1-digit integer - 12-digit integer', function () {
-            $(sel.inputFields.age).setValue(data.ages["100500"]);
+            $(sel.inputFields.age).setValue(data.ages.n100500);
             const getValue = $(sel.inputFields.age).getValue();
-            expect(getValue).toEqual(data.ages["100500"]);
+            expect(getValue).toEqual(exp.ages.n100500);
         });
 
         it('TC-5.005 Verify that dropdown expands', function () {
@@ -112,13 +112,13 @@ describe('Inputs', function () {
 
         it('TC-5.012 Verify that dropdown contains option Comedy', function () {
             $(sel.storyClick).click();
-            $$(sel.storyTypeArray)[data.storyType.Comedy].click();
+            $$(sel.storyTypeArray)[data.typeOfStory.comedy].click();
             const comedy = $(sel.inputFields.story).getText();
-            expect(comedy).toEqual(exp.typeOfStory.Comedy);
+            expect(comedy).toEqual(exp.typeOfStory.comedy);
         });
 
-        xit('TC-6.005 Verify that upon clicking on browse choosing a file from the computer is enabled', function () {
-            inputValues4(data.names.shrek, data.gender.he, data.ages["123"], data.storyType.Comedy);
+        it('TC-6.005 Verify that upon clicking on browse choosing a file from the computer is enabled', function () {
+            inputValues4(data.names.shrek, data.gender.he, data.ages.n123, data.typeOfStory.comedy);
 
             const inputDiv = $('.ant-upload input');
             const submitBtn = $(sel.createButton);

@@ -18,37 +18,37 @@ describe('Regression. Name', function () {
         });
 
         it('TC-2.007 Verify that input field accepts digits', function () {
-            $(sel.inputFields.name).setValue(data.names["0123456789"]);
+            $(sel.inputFields.name).setValue(data.names.name0123456789);
             const getName = $(sel.inputFields.name).getValue();
-            expect(getName).toEqual(data.names["0123456789"]);
+            expect(getName).toEqual(data.names.name0123456789);
         });
 
         it('TC-2.008 Verify that input field accepts special characters', function () {
-            $(sel.inputFields.name).setValue(data.names["! ? . , '"]);
+            $(sel.inputFields.name).setValue(data.names.nameSymbols);
             const getName = $(sel.inputFields.name).getValue();
-            expect(getName).toEqual(data.names["! ? . , '"]);
+            expect(getName).toEqual(data.names.nameSymbols);
         });
 
         it('TC-2.009 Verify that input field accepts 1 symbol ', function () {
-            $(sel.inputFields.name).setValue(data.names["0"]);
+            $(sel.inputFields.name).setValue(data.names.name0);
             const getName = $(sel.inputFields.name).getValue();
-            expect(getName).toEqual(data.names["0"]);
+            expect(getName).toEqual(data.names.name0);
         });
 
         it('TC-2.010 Verify that input field limit is 70 symbols', function () {
-            $(sel.inputFields.name).setValue(data.names.numbers70);
+            $(sel.inputFields.name).setValue(data.names.d70);
             const getName = $(sel.inputFields.name).getValue();
-            expect(getName).toEqual(data.names.numbers70);
+            expect(getName).toEqual(data.names.d70);
         });
 
-        it('TC-2.011 Verify that input field limit is 70 symbols', function () {
-            $(sel.inputFields.name).setValue(data.names.numbers50);
+        it('TC-2.011 Verify that input field accepts between 1 - 70 symbols', function () {
+            $(sel.inputFields.name).setValue(data.names.d50);
             const getName = $(sel.inputFields.name).getValue();
-            expect(getName).toEqual(data.names.numbers50);
+            expect(getName).toEqual(data.names.d50);
         });
 
-        xit('TC-2.012 Verify that if input value is no longer than 70 symbols', function () {
-            $(sel.inputFields.name).setValue(data.names.numbers71);
+        it('TC-2.012 Verify that if input value is no longer than 70 symbols', function () {
+            $(sel.inputFields.name).setValue(data.names.d71);
             const getName = $(sel.inputFields.name).getValue();
             expect(getName).toEqual('');
         });
@@ -58,6 +58,5 @@ describe('Regression. Name', function () {
             const getName = $(sel.inputFields.name).getValue();
             expect(getName).toEqual(exp.name);
         });
-
     });
 });
