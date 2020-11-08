@@ -1,14 +1,13 @@
 const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
 const data = require('../../data/testData.json');
-const inputValues4 = require('../../helpers/inputValues4');
 
 describe('Regression. Type of Story', function () {
     beforeEach(() => {
         browser.url('https://qa-apps.netlify.app/app_my_hero');
     });
 
-    describe('Element Type of Story', function () {
+    describe('Test suite for Element Type of Story', function () {
         it('TC-5.006 Verify that dropdown contains option "Overcoming the Monster"', function () {
             $(sel.storyClick).click();
             $$(sel.storyTypeArray)[data.typeOfStory.overcomingTheMonster].click();

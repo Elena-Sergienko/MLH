@@ -8,7 +8,7 @@ describe('Regression. Age', function () {
         browser.url('https://qa-apps.netlify.app/app_my_hero');
     });
 
-    describe('Element Age', function () {
+    describe('Test suite for Element Age', function () {
         it('TC-4.005 Verify that integer increases by 1 if clicking <+> on spinner button', function () {
             $(sel.inputFields.age).setValue(data.ages.n20);
             $(sel.ageClick.up).click();

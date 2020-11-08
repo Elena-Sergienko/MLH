@@ -1,8 +1,7 @@
 const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
 const data = require('../../data/testData.json');
-const inputValues4 = require('../../helpers/inputValues4');
-const path = require('path');
+const uploadingImage = require('../../helpers/uploadingImage');
 
 
 describe('Inputs', function () {
@@ -118,22 +117,9 @@ describe('Inputs', function () {
         });
 
         it('TC-6.005 Verify that upon clicking on browse choosing a file from the computer is enabled', function () {
-            inputValues4(data.names.shrek, data.gender.he, data.ages.n123, data.typeOfStory.comedy);
-
-            const inputDiv = $('.ant-upload input');
-            const submitBtn = $(sel.createButton);
-            const filePath = path.join(__dirname, '../../data/shrek.png');
-            const remoteFilePath = browser.uploadFile(filePath);
-            browser.execute(function () {
-                document.getElementsByTagName('input')[6].style.display = 'block';
-            });
-
-            inputDiv.waitForDisplayed();
-            inputDiv.setValue(remoteFilePath);
-            submitBtn.click();
-
-            const textStory = $(sel.textOfStory).isDisplayed();
-            expect(textStory).toEqual(true);
+            uploadingImage(data.images.ladyBugJpeg);
+            const imagePreview = $(sel.imagePreview).isDisplayed();
+            expect(imagePreview).toEqual(true);
         });
     });
 });
