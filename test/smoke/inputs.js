@@ -2,6 +2,7 @@ const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
 const data = require('../../data/testData.json');
 const uploadingImage = require('../../helpers/uploadingImage');
+const inputValues4andClick = require('../../helpers/inputValues4andClick');
 
 
 describe('Inputs', function () {
@@ -120,6 +121,21 @@ describe('Inputs', function () {
             uploadingImage(data.images.ladyBugJpeg);
             const imagePreview = $(sel.imagePreview).isDisplayed();
             expect(imagePreview).toEqual(true);
+        });
+    });
+
+    describe('Try Again button', function () {
+        it('TC-7.016 Verify that submit button is active (clickable)', function () {
+            inputValues4andClick(data.names.LadyBug007, data.gender.she, data.ages.n230, data.typeOfStory.comedy);
+            const tryAgain = $(sel.tryAgain).isClickable();
+            expect(tryAgain).toEqual(true);
+        });
+
+        it('TC-7.017 Verify that submit button refreshes the page', function () {
+            inputValues4andClick(data.names.shrek, data.gender.he, data.ages.n567, data.typeOfStory.tragedy);
+            $(sel.tryAgain).click();
+            const homePage = $(sel.description).isDisplayed();
+            expect(homePage).toEqual(true);
         });
     });
 });
