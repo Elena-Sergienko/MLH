@@ -37,6 +37,27 @@ describe('Regression. Type of Story', function () {
             expect(journey).toEqual(exp.typeOfStory.journey);
         });
 
+        it('TC-5.010 Verify that dropdown contains option "Rags and Riches"', function () {
+            $(sel.storyClick).click();
+            $$(sel.storyTypeArray)[data.typeOfStory.ragsRiches].click();
+            const ragsRiches = $(sel.inputFields.story).getText();
+            expect(ragsRiches).toEqual(exp.typeOfStory.ragsRiches);
+        });
 
+        it('TC-5.011 Verify that dropdown contains option "Tragedy"', function () {
+            $(sel.storyClick).click();
+            $$(sel.storyTypeArray)[data.typeOfStory.tragedy].click();
+            const tragedy = $(sel.inputFields.story).getText();
+            expect(tragedy).toEqual(exp.typeOfStory.tragedy);
+        });
+
+        it('TC-5.013 Verify that multiple choices are not allowed', function () {
+            $(sel.storyClick).click();
+            $$(sel.storyTypeArray)[data.typeOfStory.tragedy].click();
+            $(sel.storyClick).click();
+            $$(sel.storyTypeArray)[data.typeOfStory.comedy].click();
+            const choice = $(sel.inputFields.story).getText();
+            expect(choice).toEqual(exp.typeOfStory.comedy);
+        });
     });
 });
