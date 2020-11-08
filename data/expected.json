@@ -28,7 +28,22 @@
     "tragedy": "Tragedy",
     "comedy": "Comedy"
   },
-  "name": "The Hero",
+  "names": {
+    "theHero": "The Hero",
+    "shrek": "shrek",
+    "LADYBUG": "LADYBUG",
+    "Shrek": "Shrek",
+    "LadyBug": "LadyBug",
+    "LadyBug007": "LadyBug007",
+    "FIONA": "FIONA",
+    "name0123456789": "0123456789",
+    "nameSymbols": "! ? . , '",
+    "name0": "0",
+    "d70": "111111111122222222223333333333444444444455555555556666666666777777777",
+    "d50": "1111111111222222222223333333333444444444455555555",
+    "d71": "1111111111222222222233333333334444444444555555555566666666667777777778",
+    "withSpaces": " The Hero "
+  },
   "ages": {
     "n22": "22",
     "n100500": "100500",
@@ -37,5 +52,15 @@
     "n5": "5",
     "twelve": "123456789012",
     "n150": "150"
+  },
+  "story": {
+    "header": "Two Cats",
+    "genderInStory": {
+      "he": "his",
+      "she": "her",
+      "it": "its"
+    },
+    "age": "two hundred and thirty",
+    "srcIfNoImageInStory": "https://qa-apps.netlify.app/static/error.86e8f937.png"
   }
 }

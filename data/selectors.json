@@ -19,17 +19,22 @@
   "storyTypeArray": "//div[@class='ant-select-item-option-content']",
   "imageUpload": ".ant-upload input",
   "imagePreview": "//a[@class='ant-upload-list-item-thumbnail']",
-  "createButton": ".ant-btn",
+  "createButton": "//button[@class='ant-btn']",
   "storyClick": ".ant-select-show-arrow",
   "typeOfStory": ".ant-select-item-option",
   "tryAgain": ".btn-primary",
   "tryAgainButton": "//a[@class='btn btn-primary']",
-  "textOfStory": "//p[@class='card-text']",
   "ageClick": {
     "up": "//span[@class='ant-input-number-handler ant-input-number-handler-up']",
     "down": "//span[@class='ant-input-number-handler ant-input-number-handler-down']"
   },
   "alert": {
     "age": "//div[@role='alert']"
+  },
+  "story": {
+    "h3": "//h3",
+    "h4": "//h4[@class='mb-4']",
+    "textOfStory": "//p[@class='card-text']",
+    "image": "//img[@class='error__pic mb-2']"
   }
 }
