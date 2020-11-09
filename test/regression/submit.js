@@ -53,15 +53,21 @@ describe('Regression. Submit Button', function () {
         });
 
         it('TC-8.009 Verify that options can be changed before submitting', function () {
-            // inputValues4(data.names.shrek, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
-            // uploadingImage(data.images.shrekJpeg);
+            inputValues4(data.names.shrek, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
 
-            const name = $(sel.inputFields.name).setValue(data.names.shrek);
-            const nameClear = $(sel.inputFields.name).clearValue();
-            $(sel.inputFields.name).setValue(data.names.FIONA);
+            $(sel.inputFields.name).clearValue();
+            $(sel.inputFields.age).clearValue();
+            // $(sel.inputFields.age).refresh();
+
+            inputValues4(data.names.FIONA, data.gender.she, data.ages.n25, data.typeOfStory.tragedy);
+            browser.pause(6000);
 
             const nameNew = $(sel.inputFields.name).getValue();
             expect(nameNew).toEqual(exp.names.FIONA);
+
+            const ageNew = $(sel.inputFields.age).getValue();
+            expect(ageNew).toEqual(exp.ages.n25);
+
         });
     });
 });
