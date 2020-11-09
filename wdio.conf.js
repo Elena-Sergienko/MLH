@@ -27,9 +27,10 @@ exports.config = {
         // './test/smoke/mainFunctionality.js',
         // './test/regression/name.js',
         // './test/regression/age.js',
-        // './test/regression/typeOfStory.js',
+        // './test/regression/type.js',
         // './test/regression/image.js',
-        // './test/regression/story.js'
+        // './test/regression/story.js',
+        // './test/regression/submit.js'
     ],
     //
     // ============

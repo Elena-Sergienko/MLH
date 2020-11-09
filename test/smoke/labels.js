@@ -1,6 +1,7 @@
 const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
 const data = require('../../data/testData.json');
+const inputValues4andClick = require('../../helpers/inputValues4andClick');
 
 describe('My Little Hero', function () {
 
@@ -109,6 +110,19 @@ describe('My Little Hero', function () {
         it('TC-3.012 Verify that text for radio button it is correct', function () {
             const text = $$(sel.textHeSheIt)[data.gender.it].getText();
             expect(text).toEqual(exp.gender.it);
+        });
+    });
+    describe('Try again button', function () {
+        it('TC-7.013 Verify that submit button is present', function () {
+            inputValues4andClick(data.names.Shrek, data.gender.it, data.ages.n230, data.typeOfStory.ragsRiches);
+            const button = $(sel.tryAgainButton).isDisplayed();
+            expect(button).toEqual(true);
+        });
+
+        it('TC-7.014 Verify that submit button name is "Try again!"', function () {
+            inputValues4andClick(data.names.Shrek, data.gender.it, data.ages.n230, data.typeOfStory.ragsRiches);
+            const button = $(sel.tryAgainButton).getText();
+            expect(button).toEqual(exp.tryAgainButton);
         });
     });
 });

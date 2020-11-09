@@ -8,6 +8,7 @@
   "labelStory": "4. What type of story would you like to read?",
   "labelImage": "5. Upload an image (optional).",
   "createButton": "Create!",
+  "tryAgainButton": "Try again!",
   "placeholders": {
     "name": "Hero's name",
     "age": "Hero's age",
@@ -49,6 +50,7 @@
     "n100500": "100500",
     "n18": "18",
     "n1": "1",
+    "n25": "25",
     "n5": "5",
     "twelve": "123456789012",
     "n150": "150"

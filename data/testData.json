@@ -32,6 +32,7 @@
     "n567": "567",
     "n20": "20",
     "n5": "5",
+    "n25": "25",
     "n230": "230",
     "twelve": "123456789012",
     "thirteen": "1234567890123",
@@ -51,6 +52,7 @@
   },
   "images": {
     "shrekPng": "../data/shrek.png",
+    "fionaPng": "../data/fiona.png",
     "shrekJpeg": "../data/shrekJpeg.jpeg",
     "ladyBugJpeg": "../data/ladyBug.jpeg"
   }
