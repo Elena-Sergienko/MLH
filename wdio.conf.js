@@ -30,7 +30,8 @@ exports.config = {
         // './test/regression/type.js',
         // './test/regression/image.js',
         // './test/regression/story.js',
-        // './test/regression/submit.js'
+        // './test/regression/submit.js',
+        // './test/regression/gender.js'
     ],
     //
     // ============
