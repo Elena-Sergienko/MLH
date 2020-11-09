@@ -44,7 +44,7 @@ describe('Regression. Submit Button', function () {
             expect(createButton).toEqual(true);
         });
 
-        it('TC-8.008 Verify that submit button is enabled if 5 options are selected ', function () {
+        it('TC-8.008 Verify that submit button is enabled if 5 options are selected', function () {
             inputValues4(data.names.shrek, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
             uploadingImage(data.images.shrekJpeg);
             const createButton = $(sel.createButton).isEnabled();
