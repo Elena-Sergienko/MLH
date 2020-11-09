@@ -3,6 +3,7 @@ const exp = require('../../data/expected.json');
 const data = require('../../data/testData.json');
 const uploadingImage = require('../../helpers/uploadingImage');
 const inputValues4andClick = require('../../helpers/inputValues4andClick');
+const inputValues4 = require('../../helpers/inputValues4');
 
 
 describe('Inputs', function () {
@@ -136,6 +137,16 @@ describe('Inputs', function () {
             $(sel.tryAgain).click();
             const homePage = $(sel.description).isDisplayed();
             expect(homePage).toEqual(true);
+        });
+    });
+
+    describe('Create button', function () {
+        it('TC-8.010 Verify that after clicking submit button, the story is present on the same page', function () {
+            inputValues4(data.names.LadyBug007, data.gender.she, data.ages.n230, data.typeOfStory.comedy);
+            uploadingImage(data.images.shrekJpeg);
+            $(sel.createButton).click();
+            const testOfStory = $(sel.story.textOfStory).isDisplayed();
+            expect(testOfStory).toEqual(true);
         });
     });
 });
