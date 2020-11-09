@@ -5,9 +5,13 @@ const inputValues4 = require('../../helpers/inputValues4');
 const uploadingImage = require('../../helpers/uploadingImage');
 const inputValues4andClick = require('../../helpers/inputValues4andClick');
 
+
 describe('Regression. Test suite for Element Story', function () {
-    beforeEach(() => {
+    before(() => {
         browser.url('https://qa-apps.netlify.app/app_my_hero');
+    });
+    beforeEach(() => {
+        browser.refresh();
     });
 
     describe('Type of Story', function () {
@@ -39,7 +43,7 @@ describe('Regression. Test suite for Element Story', function () {
     });
 
     describe('Age in Story', function () {
-        it('TC-7.011 Verify that age in the story corresponds to entered age', function () {
+        it('TC-7.011 Verify that age in the story in words', function () {
             inputValues4andClick(data.names.shrek, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
             const headerComedy = $(sel.story.textOfStory);
             expect(headerComedy).toHaveTextContaining(exp.story.age);

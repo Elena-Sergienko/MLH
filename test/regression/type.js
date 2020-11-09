@@ -2,9 +2,13 @@ const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
 const data = require('../../data/testData.json');
 
+
 describe('Regression. Type of Story', function () {
-    beforeEach(() => {
+    before(() => {
         browser.url('https://qa-apps.netlify.app/app_my_hero');
+    });
+    beforeEach(() => {
+        browser.refresh();
     });
 
     describe('Test suite for Element Type of Story', function () {

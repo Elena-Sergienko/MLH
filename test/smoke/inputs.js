@@ -7,8 +7,11 @@ const inputValues4 = require('../../helpers/inputValues4');
 
 
 describe('Inputs', function () {
-    beforeEach(() => {
+    before(() => {
         browser.url('https://qa-apps.netlify.app/app_my_hero');
+    });
+    beforeEach(() => {
+        browser.refresh();
     });
 
     describe('Input fields are displayed', function () {

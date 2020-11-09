@@ -3,10 +3,13 @@ const exp = require('../../data/expected.json');
 const data = require('../../data/testData.json');
 const inputValues4andClick = require('../../helpers/inputValues4andClick');
 
-describe('My Little Hero', function () {
 
-    beforeEach(() => {
+describe('My Little Hero', function () {
+    before(() => {
         browser.url('https://qa-apps.netlify.app/app_my_hero');
+    });
+    beforeEach(() => {
+        browser.refresh();
     });
 
     describe('Title is correct', function () {
