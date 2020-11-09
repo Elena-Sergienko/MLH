@@ -1,5 +1,6 @@
 const sel = require('../../data/selectors.json');
 const data = require('../../data/testData.json');
+const exp = require('../../data/expected.json');
 const inputValues4 = require('../../helpers/inputValues4');
 const uploadingImage = require('../../helpers/uploadingImage');
 
@@ -49,6 +50,18 @@ describe('Regression. Submit Button', function () {
             uploadingImage(data.images.shrekJpeg);
             const createButton = $(sel.createButton).isEnabled();
             expect(createButton).toEqual(true);
+        });
+
+        it('TC-8.009 Verify that options can be changed before submitting', function () {
+            // inputValues4(data.names.shrek, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
+            // uploadingImage(data.images.shrekJpeg);
+
+            const name = $(sel.inputFields.name).setValue(data.names.shrek);
+            const nameClear = $(sel.inputFields.name).clearValue();
+            $(sel.inputFields.name).setValue(data.names.FIONA);
+
+            const nameNew = $(sel.inputFields.name).getValue();
+            expect(nameNew).toEqual(exp.names.FIONA);
         });
     });
 });
