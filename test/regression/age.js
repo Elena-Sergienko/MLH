@@ -35,12 +35,17 @@ describe('Regression. Age', function () {
         });
 
         it('TC-4.008 Verify that input field accepts a 1-digit integer', function () {
-            $(sel.inputFields.age).setValue(data.ages.n5);
-            const age = $(sel.inputFields.age).getValue();
-            expect(age).toEqual(exp.ages.n5);
+            let age;
+            for (let i = 0; i < data.ages.oneDigitInteger.length; i++) {
+                $(sel.inputFields.age).refresh();
+                $(sel.inputFields.age).setValue(data.ages.oneDigitInteger[i]);
+                age = $(sel.inputFields.age).getValue();
+                expect(age).toEqual(exp.ages.oneDigitInteger[i]);
+            };
         });
 
-        it('TC-4.009 Verify that input field accepts a 1-digit integer', function () {
+        it('TC-4.009 Verify that input field accepts a 12-digit integer', function () {
+
             $(sel.inputFields.age).setValue(data.ages.twelve);
             const age = $(sel.inputFields.age).getValue();
             expect(age).toEqual(exp.ages.twelve);
