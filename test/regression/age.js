@@ -35,22 +35,75 @@ describe('Regression. Age', function () {
         });
 
         it('TC-4.008 Verify that input field accepts a 1-digit integer', function () {
-            $(sel.inputFields.age).setValue(data.ages.n5);
-            const age = $(sel.inputFields.age).getValue();
-            expect(age).toEqual(exp.ages.n5);
+            let age;
+            for (let i = 0; i < data.ages.oneDigitInteger.length; i++) {
+                $(sel.inputFields.age).refresh();
+                $(sel.inputFields.age).setValue(data.ages.oneDigitInteger[i]);
+                age = $(sel.inputFields.age).getValue();
+                expect(age).toEqual(exp.ages.oneDigitInteger[i]);
+            }
         });
 
-        it('TC-4.009 Verify that input field accepts a 1-digit integer', function () {
-            $(sel.inputFields.age).setValue(data.ages.twelve);
-            const age = $(sel.inputFields.age).getValue();
-            expect(age).toEqual(exp.ages.twelve);
+        it('TC-4.008.1 Verify that input field accepts numbers', function () {
+
+            for (let i = +data.ages.n10; i <= +data.ages.n29; i++) {
+                let number = i + 1;
+
+                $(sel.inputFields.age).refresh();
+                $(sel.inputFields.age).setValue(number);
+                let age = $(sel.inputFields.age).getValue();
+                expect(age).toEqual('' + (i + 1));
+            }
+
+            for (let i = 1; i <= +data.ages.n10; i++) {
+                let number = +data.ages.n10 * i;
+
+                $(sel.inputFields.age).refresh();
+                $(sel.inputFields.age).setValue(number);
+                let age = $(sel.inputFields.age).getValue();
+                expect(age).toEqual('' + (+exp.ages.n10 * i));
+            }
+
+            for (let i = 1; i < +data.ages.twelveDigitInteger.last; i *= 100) {
+                let number = +data.ages.n10 * i;
+
+                $(sel.inputFields.age).refresh();
+                $(sel.inputFields.age).setValue(number);
+                let age = $(sel.inputFields.age).getValue();
+                expect(age).toEqual('' + (+exp.ages.n10 * i));
+            }
+        });
+
+        it('TC-4.009 Verify that input field accepts a 12-digit integer', function () {
+            let result;
+            let first = +data.ages.twelveDigitInteger.first;
+            let last = +data.ages.twelveDigitInteger.last;
+            let integers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            let expectFirst = +exp.ages.twelveDigitInteger.first;
+
+            for (let j = 0; j < integers.length; j++) {
+                for (let i = integers[j]; i <= last; i *= 10) {
+                    result = first + i - 1;
+
+                    $(sel.inputFields.age).refresh();
+                    $(sel.inputFields.age).setValue(result);
+                    let age = $(sel.inputFields.age).getValue();
+                    expect(age).toEqual('' + (expectFirst + i - 1));
+                }
+            }
         });
 
         it('TC-4.010 Verify that if input value is longer than a 12-digit integer, error message appears', function () {
-            $(sel.inputFields.age).setValue(data.ages.thirteen);
+            $(sel.inputFields.age).setValue('' + (+data.ages.twelveDigitInteger.last + 1));
             $(sel.alert.age).waitForDisplayed();
             const alert = $(sel.alert.age).isDisplayed();
             expect(alert).toEqual(true);
+
+            $(sel.inputFields.age).setValue(data.ages.thirteen);
+            $(sel.alert.age).waitForDisplayed();
+            const alert1 = $(sel.alert.age).isDisplayed();
+            expect(alert1).toEqual(true);
         });
 
         it('TC-4.012 Verify that if input value is a negative integer, submission is not allowed', function () {
