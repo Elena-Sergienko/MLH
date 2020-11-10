@@ -44,6 +44,36 @@ describe('Regression. Age', function () {
             }
         });
 
+        it('TC-4.008.1 Verify that input field accepts numbers', function () {
+
+            for (let i = +data.ages.n10; i <= +data.ages.n29; i++) {
+                let number = i + 1;
+
+                $(sel.inputFields.age).refresh();
+                $(sel.inputFields.age).setValue(number);
+                let age = $(sel.inputFields.age).getValue();
+                expect(age).toEqual('' + (i + 1));
+            }
+
+            for (let i = 1; i <= +data.ages.n10; i++) {
+                let number = +data.ages.n10 * i;
+
+                $(sel.inputFields.age).refresh();
+                $(sel.inputFields.age).setValue(number);
+                let age = $(sel.inputFields.age).getValue();
+                expect(age).toEqual('' + (+exp.ages.n10 * i));
+            }
+
+            for (let i = 1; i < +data.ages.twelveDigitInteger.last; i *= 100) {
+                let number = +data.ages.n10 * i;
+
+                $(sel.inputFields.age).refresh();
+                $(sel.inputFields.age).setValue(number);
+                let age = $(sel.inputFields.age).getValue();
+                expect(age).toEqual('' + (+exp.ages.n10 * i));
+            }
+        });
+
         it('TC-4.009 Verify that input field accepts a 12-digit integer', function () {
             let result;
             let first = +data.ages.twelveDigitInteger.first;
@@ -100,5 +130,4 @@ describe('Regression. Age', function () {
             expect(age).toEqual(exp.ages.n150);
         });
     });
-})
-;
+});
