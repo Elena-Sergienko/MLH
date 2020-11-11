@@ -12,7 +12,7 @@ describe('Regression. Name', function () {
 
     describe('Test suite for Element Name', function () {
 
-        xdescribe('Input field Name accepts letters', function () {
+        describe('Input field Name accepts letters', function () {
 
             it('TC-2.006 Verify that input field accepts upper case letters', function () {
                 $(sel.inputFields.name).setValue(data.names.FIONA);
@@ -61,7 +61,7 @@ describe('Regression. Name', function () {
             });
         });
 
-        xdescribe('Input field accepts digits', function () {
+        describe('Input field accepts digits', function () {
 
             it('TC-2.007 Verify that input field accepts digits', function () {
                 $(sel.inputFields.name).setValue(data.names.name0123456789);
@@ -79,7 +79,7 @@ describe('Regression. Name', function () {
             });
         });
 
-        xdescribe('Input field accepts special characters', function () {
+        describe('Input field accepts special characters', function () {
             it('TC-2.008 Verify that input field accepts special characters', function () {
                 $(sel.inputFields.name).setValue(data.names.nameSymbols);
                 const getName = $(sel.inputFields.name).getValue();
@@ -150,7 +150,7 @@ describe('Regression. Name', function () {
             });
         });
 
-        xdescribe('Spaces before and after name', function () {
+        describe('Spaces before and after name', function () {
 
             it('TC-2.013 Verify that spaces before and after name are trimmed', function () {
                 $(sel.inputFields.name).setValue(data.names.withSpaces);
