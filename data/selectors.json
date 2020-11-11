@@ -29,7 +29,8 @@
     "down": "//span[@class='ant-input-number-handler ant-input-number-handler-down']"
   },
   "alert": {
-    "age": "//div[@role='alert']"
+    "age": "//div[@role='alert']",
+    "name": "//div[@role='alert']"
   },
   "story": {
     "h3": "//h3",

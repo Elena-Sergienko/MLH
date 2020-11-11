@@ -12,7 +12,7 @@ describe('Regression. Name', function () {
 
     describe('Test suite for Element Name', function () {
 
-        describe('Input field Name accepts letters', function () {
+        xdescribe('Input field Name accepts letters', function () {
 
             it('TC-2.006 Verify that input field accepts upper case letters', function () {
                 $(sel.inputFields.name).setValue(data.names.FIONA);
@@ -61,7 +61,7 @@ describe('Regression. Name', function () {
             });
         });
 
-        describe('Input field accepts digits', function () {
+        xdescribe('Input field accepts digits', function () {
 
             it('TC-2.007 Verify that input field accepts digits', function () {
                 $(sel.inputFields.name).setValue(data.names.name0123456789);
@@ -79,7 +79,7 @@ describe('Regression. Name', function () {
             });
         });
 
-        describe('Input field accepts special characters', function () {
+        xdescribe('Input field accepts special characters', function () {
             it('TC-2.008 Verify that input field accepts special characters', function () {
                 $(sel.inputFields.name).setValue(data.names.nameSymbols);
                 const getName = $(sel.inputFields.name).getValue();
@@ -133,9 +133,24 @@ describe('Regression. Name', function () {
                 const getName = $(sel.inputFields.name).getValue();
                 expect(getName).toEqual(exp.names.l70);
             });
+
+            it('TC-2.012.2 Verify that if input value is longer than 70 letters, an error warning appear', function () {
+                $(sel.inputFields.name).setValue(data.names.l70 + data.names.letters[18]);
+                $(sel.alert.name).waitForDisplayed();
+                const alert = $(sel.alert.name).isDisplayed();
+                expect(alert).toEqual(true);
+            });
+
+            it('TC-2.012.3 Verify that if input value is longer than 70 letters, an error warning appear with text', function () {
+                $(sel.inputFields.name).setValue(data.names.l70 + data.names.letters[18]);
+                $(sel.alert.name).waitForDisplayed();
+
+                const textAlert = $(sel.alert.name).getText();
+                expect(textAlert).toEqual(exp.alert.name);
+            });
         });
 
-        describe('Spaces before and after name', function () {
+        xdescribe('Spaces before and after name', function () {
 
             it('TC-2.013 Verify that spaces before and after name are trimmed', function () {
                 $(sel.inputFields.name).setValue(data.names.withSpaces);
