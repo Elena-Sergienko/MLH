@@ -106,6 +106,14 @@ describe('Regression. Age', function () {
             expect(alert1).toEqual(true);
         });
 
+        it('TC-4.010.1 Verify text alert', function () {
+            $(sel.inputFields.age).setValue(data.ages.thirteen);
+            $(sel.alert.age).waitForDisplayed();
+
+            const textAlert = $(sel.alert.age).getText();
+            expect(textAlert).toEqual(exp.alert.age);
+        });
+
         it('TC-4.012 Verify that if input value is a negative integer, submission is not allowed', function () {
             inputValues4(data.names.shrek, data.gender.he, data.ages.negative, data.typeOfStory.comedy);
             const submitAllowed = $(sel.createButton).isEnabled();

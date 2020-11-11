@@ -79,6 +79,7 @@
     "srcIfNoImageInStory": "https://qa-apps.netlify.app/static/error.86e8f937.png"
   },
   "alert": {
-    "name": "70 symbols max"
+    "name": "70 symbols max",
+    "age": "looks like unreal age"
   }
 }
