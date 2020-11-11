@@ -120,10 +120,24 @@ describe('Regression. Age', function () {
             expect(submitAllowed).not.toEqual(true);
         });
 
+        it('TC-4.012.1 Verify that if input value is a negative integer, error message appears', function () {
+            $(sel.inputFields.age).setValue(data.ages.negative);
+            $(sel.alert.age).waitForDisplayed();
+            const errorMessage = $(sel.alert.age).getText();
+            expect(errorMessage).toEqual(exp.alert.age);
+        });
+
         it('TC-4.013 Verify that if input value is a floating number, submission is not allowed ', function () {
             inputValues4(data.names.shrek, data.gender.he, data.ages.floating, data.typeOfStory.comedy);
             const submitAllowed = $(sel.createButton).isEnabled();
             expect(submitAllowed).not.toEqual(true);
+        });
+
+        it('TC-4.013.1 Verify that if input value is a floating number, error message appears ', function () {
+            $(sel.inputFields.age).setValue(data.ages.floating);
+            $(sel.alert.age).waitForDisplayed();
+            const errorMessage = $(sel.alert.age).getText();
+            expect(errorMessage).toEqual(exp.alert.age);
         });
 
         it('TC-4.014 Verify that input field doesn\'t accept a special character', function () {
