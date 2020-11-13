@@ -2,8 +2,11 @@
   "backspace": "\ue003",
   "control": "\ue009",
   "delete": "\ue017",
+  "down": "\ue015",
+  "end": "\ue010",
   "enter": "\ue007",
   "home": "\ue011",
   "left": "\ue012",
-  "right": "\ue014"
+  "right": "\ue014",
+  "up": "\ue013"
 }
