@@ -1,0 +1,9 @@
+{
+  "backspace": "\ue003",
+  "control": "\ue009",
+  "delete": "\ue017",
+  "enter": "\ue007",
+  "home": "\ue011",
+  "left": "\ue012",
+  "right": "\ue014"
+}
