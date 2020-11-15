@@ -6,7 +6,8 @@ const inputValues4andClick = require('../../helpers/inputValues4andClick');
 
 describe('My Little Hero', function () {
     before(() => {
-        browser.url('https://qa-apps.netlify.app/app_my_hero');
+        browser.url('');
+        browser.maximizeWindow();
     });
     beforeEach(() => {
         browser.refresh();

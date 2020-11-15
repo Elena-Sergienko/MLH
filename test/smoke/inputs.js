@@ -8,7 +8,8 @@ const inputValues4 = require('../../helpers/inputValues4');
 
 describe('Inputs', function () {
     before(() => {
-        browser.url('https://qa-apps.netlify.app/app_my_hero');
+        browser.url('');
+        browser.maximizeWindow();
     });
     beforeEach(() => {
         browser.refresh();

@@ -8,7 +8,8 @@ const uploadingImage = require('../../helpers/uploadingImage');
 
 describe('Checking the main functionality', function () {
     before(() => {
-        browser.url('https://qa-apps.netlify.app/app_my_hero');
+        browser.url('');
+        browser.maximizeWindow();
     });
     beforeEach(() => {
         browser.refresh();

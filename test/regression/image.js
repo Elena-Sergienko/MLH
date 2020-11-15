@@ -5,7 +5,8 @@ const uploadingImage = require('../../helpers/uploadingImage');
 
 describe('Regression. Image', function () {
     before(() => {
-        browser.url('https://qa-apps.netlify.app/app_my_hero');
+        browser.url('');
+        browser.maximizeWindow();
     });
     beforeEach(() => {
         browser.refresh();

@@ -6,7 +6,8 @@ const code = require('../../data/codes.json');
 
 describe('Regression. Type of Story', function () {
     before(() => {
-        browser.url('https://qa-apps.netlify.app/app_my_hero');
+        browser.url('');
+        browser.maximizeWindow();
     });
     beforeEach(() => {
         browser.refresh();
