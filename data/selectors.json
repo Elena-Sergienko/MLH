@@ -11,6 +11,7 @@
     "image": "//div[@class='ant-upload ant-upload-select ant-upload-select-picture-card']"
   },
   "textHeSheIt": "//span[@class='ant-radio']/following-sibling::span",
+  "genderChecked": "//label[@class='ant-radio-wrapper ant-radio-wrapper-checked']/span/input",
   "radioButtonsArray": "//span[@class='ant-radio']",
   "placeholderType": "//span[@class='ant-select-selection-placeholder']",
   "placeholderImage": "//span[@role='img']/following-sibling::div[@style='font-size: 15px;']",
