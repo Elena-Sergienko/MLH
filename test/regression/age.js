@@ -5,7 +5,8 @@ const inputValues4 = require('../../helpers/inputValues4');
 
 describe('Regression. Age', function () {
     before(() => {
-        browser.url('https://qa-apps.netlify.app/app_my_hero');
+        browser.url('');
+        browser.maximizeWindow();
     });
     beforeEach(() => {
         browser.refresh();
@@ -146,8 +147,8 @@ describe('Regression. Age', function () {
             expect(age).toEqual(exp.ages.n150);
         });
 
-        it('TC-4.015 Verify that input field doesn\'t accept a letter', function () {
-            $(sel.inputFields.age).setValue(data.ages.withLetter);
+        it('TC-4.015 Verify that age cannot be accepted with the letter', function () {
+            inputValues4(data.names.LadyBug, data.gender.she, data.ages.withLetter, data.typeOfStory.comedy);
             const age = $(sel.inputFields.age).getValue();
             expect(age).toEqual(exp.ages.n150);
         });

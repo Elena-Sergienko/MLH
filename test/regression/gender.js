@@ -1,12 +1,13 @@
 const sel = require('../../data/selectors.json');
-const exp = require('../../data/expected.json');
 const data = require('../../data/testData.json');
+const exp = require('../../data/expected.json');
 const code = require('../../data/codes.json');
 const inputValues4 = require('../../helpers/inputValues4');
 
 describe('Regression. Gender', function () {
     before(() => {
-        browser.url('https://qa-apps.netlify.app/app_my_hero');
+        browser.url('');
+        browser.maximizeWindow();
     });
     beforeEach(() => {
         browser.refresh();

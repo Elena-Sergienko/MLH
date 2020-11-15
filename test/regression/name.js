@@ -4,7 +4,8 @@ const data = require('../../data/testData.json');
 
 describe('Regression. Name', function () {
     before(() => {
-        browser.url('https://qa-apps.netlify.app/app_my_hero');
+        browser.url('');
+        browser.maximizeWindow();
     });
     beforeEach(() => {
         browser.refresh();
