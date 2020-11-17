@@ -2,7 +2,7 @@
 
 # My Little Hero
 
-## Idea of project
+## Idea of the project
 
 ## The My Little Hero app is created to help parents spend time with kids reading about their favorite characters. Another goal is helping youth kids reading on their own.
 
