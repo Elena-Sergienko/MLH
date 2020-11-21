@@ -11,9 +11,6 @@ describe('Inputs', function () {
         browser.url('');
         browser.maximizeWindow();
     });
-    beforeEach(() => {
-        browser.refresh();
-    });
 
     describe('Input fields are displayed', function () {
         it('TC-2.003 Verify that Name field is present', function () {
@@ -116,6 +113,7 @@ describe('Inputs', function () {
         });
 
         it('TC-5.012 Verify that dropdown contains option Comedy', function () {
+            browser.refresh();
             $(sel.storyClick).click();
             $$(sel.storyTypeArray)[data.typeOfStory.comedy].click();
             const comedy = $(sel.inputFields.story).getText();
@@ -129,6 +127,9 @@ describe('Inputs', function () {
         });
     });
 
+    beforeEach(() => {
+        browser.refresh();
+    });
     describe('Try Again button', function () {
         it('TC-7.016 Verify that submit button is active (clickable)', function () {
             inputValues4andClick(data.names.LadyBug007, data.gender.she, data.ages.n230, data.typeOfStory.comedy);

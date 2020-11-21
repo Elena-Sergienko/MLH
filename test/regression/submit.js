@@ -70,9 +70,6 @@ describe('Regression. Submit Button', function () {
 
                 const nameNew = $(sel.inputFields.name).getValue();
                 expect(nameNew).toEqual(exp.names.dragon);
-
-                const createButton = $(sel.createButton).isEnabled();
-                expect(createButton).toEqual(true);
             });
 
             it('TC-8.009.2 Verify that 1 letter of Name can be changed before submitting', function () {
@@ -83,9 +80,6 @@ describe('Regression. Submit Button', function () {
 
                 const nameNew = $(sel.inputFields.name).getValue();
                 expect(nameNew).toEqual(exp.names.Shrek);
-
-                const createButton = $(sel.createButton).isEnabled();
-                expect(createButton).toEqual(true);
             });
 
             it('TC-8.009.3 Verify that Age can be changed before submitting', function () {
@@ -97,9 +91,6 @@ describe('Regression. Submit Button', function () {
 
                 const nameAge = $(sel.inputFields.age).getValue();
                 expect(nameAge).toEqual(exp.ages.n25);
-
-                const createButton = $(sel.createButton).isEnabled();
-                expect(createButton).toEqual(true);
             });
 
             it('TC-8.009.4 Verify that 1 digit of Age can be changed before submitting', function () {
@@ -110,9 +101,6 @@ describe('Regression. Submit Button', function () {
 
                 const newAge = $(sel.inputFields.age).getValue();
                 expect(newAge).toEqual(exp.ages.n235);
-
-                const createButton = $(sel.createButton).isEnabled();
-                expect(createButton).toEqual(true);
             });
 
             it('TC-8.009.5 Verify that Gender can be changed before submitting', function () {
@@ -132,9 +120,6 @@ describe('Regression. Submit Button', function () {
 
                 const typeOfStory = $(sel.inputFields.story).getText();
                 expect(typeOfStory).toEqual(exp.typeOfStory.tragedy);
-
-                const createButton = $(sel.createButton).isEnabled();
-                expect(createButton).toEqual(true);
             });
         });
     });

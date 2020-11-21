@@ -46,7 +46,6 @@ describe('Regression. Age', function () {
         });
 
         it('TC-4.008.1 Verify that input field accepts numbers', function () {
-
             for (let i = +data.ages.n10; i <= +data.ages.n29; i++) {
                 let number = i + 1;
 
@@ -100,11 +99,6 @@ describe('Regression. Age', function () {
             $(sel.alert.age).waitForDisplayed();
             const alert = $(sel.alert.age).isDisplayed();
             expect(alert).toEqual(true);
-
-            $(sel.inputFields.age).setValue(data.ages.thirteen);
-            $(sel.alert.age).waitForDisplayed();
-            const alert1 = $(sel.alert.age).isDisplayed();
-            expect(alert1).toEqual(true);
         });
 
         it('TC-4.010.1 Verify text alert', function () {
