@@ -1,6 +1,7 @@
 const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
 const data = require('../../data/testData.json');
+const inputValues4andClick = require('../../helpers/inputValues4andClick');
 
 describe('Regression. Name', function () {
     before(() => {
@@ -14,7 +15,6 @@ describe('Regression. Name', function () {
     describe('Test suite for Element Name', function () {
 
         describe('Input field Name accepts letters', function () {
-
             it('TC-2.006 Verify that input field accepts upper case letters', function () {
                 $(sel.inputFields.name).setValue(data.names.FIONA);
                 const getName = $(sel.inputFields.name).getValue();
@@ -98,7 +98,6 @@ describe('Regression. Name', function () {
         });
 
         describe('Input field accepts 70 symbols', function () {
-
             it('TC-2.010 Verify that input field accepts 70 symbols(digits)', function () {
                 $(sel.inputFields.name).setValue(data.names.d70);
                 const getName = $(sel.inputFields.name).getValue();
@@ -152,11 +151,17 @@ describe('Regression. Name', function () {
         });
 
         describe('Spaces before and after name', function () {
-
             it('TC-2.013 Verify that spaces before and after name are trimmed', function () {
-                $(sel.inputFields.name).setValue(data.names.withSpaces);
-                const getName = $(sel.inputFields.name).getValue();
-                expect(getName).toEqual(exp.names.theHero);
+                inputValues4andClick(data.names.withSpaces, data.gender.it, data.ages.n5, data.typeOfStory.comedy);
+                const text = $(sel.story.textOfStory).getText();
+                const wordsInStory = text.split(' ');
+                let result = true;
+                for (let i = 0; i < wordsInStory.length; i++){
+                    if(wordsInStory[i] === ''){
+                        result = false;
+                    }
+                }
+                expect(result).toEqual(true);
             });
         });
     });

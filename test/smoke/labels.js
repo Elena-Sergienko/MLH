@@ -9,9 +9,6 @@ describe('My Little Hero', function () {
         browser.url('');
         browser.maximizeWindow();
     });
-    beforeEach(() => {
-        browser.refresh();
-    });
 
     describe('Title is correct', function () {
         it('TC-1.001 Verify that title is "MLH trial"', function () {
@@ -45,7 +42,6 @@ describe('My Little Hero', function () {
     });
 
     describe('Labels displayed', function () {
-
         it('TC-2.001 Verify that Label 1 is present ', function () {
             const label = $$(sel.labelsNameGenAgeType)[data.labels.name].isDisplayed();
             expect(label).toEqual(true);
@@ -73,7 +69,6 @@ describe('My Little Hero', function () {
     });
 
     describe('Labels are correct', function () {
-
         it('TC-2.002 Verify that text for Label 1 is <1. What is your Hero\'s name?>', function () {
             const text = $$(sel.labelsNameGenAgeType)[data.labels.name].getAttribute('title');
             expect(text).toEqual(exp.labelName);
@@ -124,6 +119,7 @@ describe('My Little Hero', function () {
         });
 
         it('TC-7.014 Verify that submit button name is "Try again!"', function () {
+            browser.refresh();
             inputValues4andClick(data.names.Shrek, data.gender.it, data.ages.n230, data.typeOfStory.ragsRiches);
             const button = $(sel.tryAgainButton).getText();
             expect(button).toEqual(exp.tryAgainButton);
