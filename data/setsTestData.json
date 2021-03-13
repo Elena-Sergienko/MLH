@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Shrek",
+    "gender": 0,
+    "age": 12,
+    "story": 0
+  },
+  {
+    "name": "FIONA",
+    "gender": 1,
+    "age": 30,
+    "story": 1
+  },
+  {
+    "name": "dragon",
+    "gender": 2,
+    "age": 100,
+    "story": 2
+  },
+  {
+    "name": "LadyBug007",
+    "gender": 1,
+    "age": 0,
+    "story": 3
+  }
+]
