@@ -5,10 +5,7 @@ const code = require('../../data/codes.json');
 const inputValues4 = require('../../helpers/inputValues4');
 
 describe('Regression. Gender', function () {
-    before(() => {
-        browser.url('');
-        browser.maximizeWindow();
-    });
+
     beforeEach(() => {
         browser.refresh();
     });

@@ -4,10 +4,7 @@ const data = require('../../data/testData.json');
 const inputValues4andClick = require('../../helpers/inputValues4andClick');
 
 describe('Regression. Name', function () {
-    before(() => {
-        browser.url('');
-        browser.maximizeWindow();
-    });
+
     beforeEach(() => {
         browser.refresh();
     });

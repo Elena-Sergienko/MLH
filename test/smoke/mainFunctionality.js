@@ -7,10 +7,7 @@ const uploadingImage = require('../../helpers/uploadingImage');
 
 
 describe('Checking the main functionality', function () {
-    // before(() => {
-    //     browser.url('');
-    //     browser.maximizeWindow();
-    // });
+
     beforeEach(() => {
         browser.refresh();
     });

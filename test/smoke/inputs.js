@@ -7,10 +7,6 @@ const inputValues4 = require('../../helpers/inputValues4');
 
 
 describe('Inputs', function () {
-    // before(() => {
-    //     browser.url('');
-    //     browser.maximizeWindow();
-    // });
 
     describe('Input fields are displayed', function () {
         it('TC-2.003 Verify that Name field is present', function () {
@@ -115,7 +111,8 @@ describe('Inputs', function () {
         it('TC-5.012 Verify that dropdown contains option Comedy', function () {
             browser.refresh();
             $(sel.storyClick).click();
-            $$(sel.storyTypeArray)[data.typeOfStory.comedy].click();
+            browser.keys(['ArrowUp', 'Enter']);
+
             const comedy = $(sel.inputFields.story).getText();
             expect(comedy).toEqual(exp.typeOfStory.comedy);
         });
@@ -147,11 +144,12 @@ describe('Inputs', function () {
 
     describe('Create button', function () {
         it('TC-8.010 Verify that after clicking submit button, the story is present on the same page', function () {
-            inputValues4(data.names.LadyBug007, data.gender.she, data.ages.n230, data.typeOfStory.comedy);
+            inputValues4(data.names.LadyBug007, data.gender.she, data.ages.n230, data.typeOfStory.overcomingTheMonster);
+            browser.pause(3000)
             uploadingImage(data.images.shrekJpeg);
+
             $(sel.createButton).click();
-            const testOfStory = $(sel.story.textOfStory).isDisplayed();
-            expect(testOfStory).toEqual(true);
+            expect($(sel.story.textOfStory)).toBeDisplayed();
         });
     });
 });
