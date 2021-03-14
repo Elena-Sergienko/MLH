@@ -7,10 +7,10 @@ const inputValues4 = require('../../helpers/inputValues4');
 
 
 describe('Inputs', function () {
-    before(() => {
-        browser.url('');
-        browser.maximizeWindow();
-    });
+    // before(() => {
+    //     browser.url('');
+    //     browser.maximizeWindow();
+    // });
 
     describe('Input fields are displayed', function () {
         it('TC-2.003 Verify that Name field is present', function () {
