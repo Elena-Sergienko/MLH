@@ -1,0 +1,51 @@
+[
+  {
+    "testCase": "the gender of the hero is not selected",
+    "name": "Hero",
+    "gender": null,
+    "age": 12,
+    "story": 0
+  },
+  {
+    "testCase": "the story field is left blank",
+    "name": "35 puppies",
+    "gender": 2,
+    "age": 5,
+    "story": null
+  },
+  {
+    "testCase": "the name field is not filled in",
+    "name": "",
+    "gender": 0,
+    "age": 12,
+    "story": 0
+  },
+  {
+    "testCase": "there are 71 characters in the name field (the maximum allowed is 70)",
+    "name": "SeventyOneCharactershhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+    "gender": 1,
+    "age": 1,
+    "story": 1
+  },
+  {
+    "testCase": "the age of the hero contains 13 digits (the maximum allowed is 12)",
+    "name": "dragon",
+    "gender": 2,
+    "age": 7000000000000,
+    "story": 2
+  },
+  {
+    "testCase": "the name field is left blank",
+    "name": "",
+    "gender": 1,
+    "age": 0,
+    "story": 3
+  },
+  {
+    "testCase": "the age field is left blank",
+    "name": "35 puppies",
+    "gender": 2,
+    "age": "",
+    "story": 4
+  }
+]
