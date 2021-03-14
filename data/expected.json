@@ -84,5 +84,8 @@
   "alert": {
     "name": "70 symbols max",
     "age": "looks like unreal age"
+  },
+  "url": {
+    "homePage2": "https://qa-apps.netlify.app/hero#"
   }
 }

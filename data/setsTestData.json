@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Shrek",
+    "gender": 0,
+    "age": 12,
+    "story": 0
+  },
+  {
+    "name": "FIONA",
+    "gender": 1,
+    "age": 30,
+    "story": 1
+  },
+  {
+    "name": "dragon",
+    "gender": 2,
+    "age": 712345678900,
+    "story": 2
+  },
+  {
+    "name": "LadyBug007",
+    "gender": 1,
+    "age": 0,
+    "story": 3
+  },
+  {
+    "name": "35 puppies",
+    "gender": 2,
+    "age": 1,
+    "story": 4
+  },
+  {
+    "name": "Agent-5",
+    "gender": 0,
+    "age": 25,
+    "story": 5
+  },
+  {
+    "name": "B.",
+    "gender": 1,
+    "age": 12,
+    "story": 6
+  },
+  {
+    "name": "SeventyСharactershhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+    "gender": 2,
+    "age": 12,
+    "story": 1
+  }
+]
