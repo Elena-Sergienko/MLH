@@ -22,9 +22,9 @@ exports.config = {
     specs: [
         // './test/smoke/*',
         // './test/smoke/inputs.js',
-        // './test/*/*',
+        './test/*/*',
         // './test/dynamicTests/e2e.js'
-        './test/regression/*'
+        // './test/regression/*'
         // './test/smoke/labels.js',
     ],
     // Patterns to exclude.
