@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio wdio.conf.js"
+    "test": "wdio wdio.conf.js",
+    "test:e2e": "npm test -- --spec ./test/dynamicTests/e2e.js"
   },
   "keywords": [],
   "author": "",

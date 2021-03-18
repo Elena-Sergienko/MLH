@@ -5,10 +5,6 @@ const inputValues4andClick = require('../../helpers/inputValues4andClick');
 
 
 describe('My Little Hero', function () {
-    before(() => {
-        browser.url('');
-        browser.maximizeWindow();
-    });
 
     describe('Title is correct', function () {
         it('TC-1.001 Verify that title is "MLH trial"', function () {

@@ -4,10 +4,7 @@ const inputValues4 = require('../../helpers/inputValues4');
 const uploadingImage = require('../../helpers/uploadingImage');
 
 describe('Regression. Image', function () {
-    before(() => {
-        browser.url('');
-        browser.maximizeWindow();
-    });
+
     beforeEach(() => {
         browser.refresh();
     });

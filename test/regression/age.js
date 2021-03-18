@@ -4,10 +4,7 @@ const data = require('../../data/testData.json');
 const inputValues4 = require('../../helpers/inputValues4');
 
 describe('Regression. Age', function () {
-    before(() => {
-        browser.url('');
-        browser.maximizeWindow();
-    });
+
     beforeEach(() => {
         browser.refresh();
     });

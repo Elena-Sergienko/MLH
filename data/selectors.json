@@ -8,6 +8,7 @@
     "age": "#age",
     "gender": ".ant-radio",
     "story": ".ant-select-selector",
+    "storySelected": "span.ant-select-selection-item",
     "image": "//div[@class='ant-upload ant-upload-select ant-upload-select-picture-card']"
   },
   "textHeSheIt": "//span[@class='ant-radio']/following-sibling::span",

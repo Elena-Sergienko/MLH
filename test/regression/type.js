@@ -5,10 +5,7 @@ const code = require('../../data/codes.json');
 
 
 describe('Regression. Type of Story', function () {
-    before(() => {
-        browser.url('');
-        browser.maximizeWindow();
-    });
+
     beforeEach(() => {
         browser.refresh();
     });

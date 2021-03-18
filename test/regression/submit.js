@@ -7,10 +7,7 @@ const uploadingImage = require('../../helpers/uploadingImage');
 
 
 describe('Regression. Submit Button', function () {
-    before(() => {
-        browser.url('');
-        browser.maximizeWindow();
-    });
+
     beforeEach(() => {
         browser.refresh();
     });

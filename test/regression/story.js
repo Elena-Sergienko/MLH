@@ -7,10 +7,7 @@ const inputValues4andClick = require('../../helpers/inputValues4andClick');
 
 
 describe('Regression. Test suite for Element Story', function () {
-    before(() => {
-        browser.url('');
-        browser.maximizeWindow();
-    });
+
     beforeEach(() => {
         browser.refresh();
     });
