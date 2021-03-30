@@ -22,10 +22,11 @@ exports.config = {
     specs: [
         // './test/smoke/*',
         // './test/smoke/inputs.js',
-        './test/*/*',
+        // './test/*/*',
         // './test/dynamicTests/e2e.js'
         // './test/regression/*'
         // './test/smoke/labels.js',
+        './test/regression/colors.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -37,7 +38,6 @@ exports.config = {
         // './test/regression/image.js',
         // './test/regression/story.js',
         // './test/regression/submit.js',
-        // './test/regression/gender.js'
     ],
     //
     // ============
