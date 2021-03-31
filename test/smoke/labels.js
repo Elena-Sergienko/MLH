@@ -65,12 +65,12 @@ describe('My Little Hero', function () {
     });
 
     describe('Labels are correct', function () {
-        it('TC-2.002 Verify that text for Label 1 is <1. What is your Hero\'s name?>', function () {
+        it.skip('TC-2.002 Verify that text for Label 1 is <1. What is your Hero\'s name?>', function () {
             const text = $$(sel.labelsNameGenAgeType)[data.labels.name].getAttribute('title');
             expect(text).toEqual(exp.labelName);
         });
 
-        it('TC-3.002 Verify that text for Label 2 is <2. Please choose a gender.>', function () {
+        it.skip('TC-3.002 Verify that text for Label 2 is <2. Please choose a gender.>', function () {
             const text = $$(sel.labelsNameGenAgeType)[data.labels.gender].getAttribute('title');
             expect(text).toEqual(exp.labelGender);
         });

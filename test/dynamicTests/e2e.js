@@ -4,12 +4,11 @@ const setData = require('../../data/setsTestData.json');
 const setDataNegative = require('../../data/setsTestDataNegative.json');
 const inputValues4 = require('../../helpers/inputValues4');
 const inputValues4andClick = require('../../helpers/inputValues4andClick');
-const uploadingImage = require('../../helpers/uploadingImage');
 
 
 describe('Verify the main functionality', function () {
 
-    describe('Positive', function () {
+    describe('Positive', function () {  // forEach -> total 00:00:16; map -> total 00:00:16
 
         setData.forEach(function (setData) {
             it(`Verify that User can create, read the story about hero ${setData.name} and go back to the main page `, function () {

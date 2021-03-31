@@ -33,7 +33,7 @@ describe('Regression. Test suite for Element Story', function () {
             expect(headerComedy).toHaveTextContaining(exp.story.genderInStory.he);
         });
 
-        it('TC-7.010 The gender should be used for possessive pronouns as well it -- its', function () {
+        it.skip('TC-7.010 The gender should be used for possessive pronouns as well it -- its', function () {
             inputValues4andClick(data.names.LadyBug007, data.gender.it, data.ages.n567, data.typeOfStory.overcomingTheMonster);
             const headerComedy = $(sel.story.textOfStory);
             expect(headerComedy).toHaveTextContaining(exp.story.genderInStory.it);
@@ -41,7 +41,7 @@ describe('Regression. Test suite for Element Story', function () {
     });
 
     describe('Age in Story', function () {
-        it('TC-7.011 Verify that age in the story in words', function () {
+        it.skip('TC-7.011 Verify that age in the story in words', function () {
             inputValues4andClick(data.names.shrek, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
             const headerComedy = $(sel.story.textOfStory);
             expect(headerComedy).toHaveTextContaining(exp.story.age);
@@ -55,7 +55,7 @@ describe('Regression. Test suite for Element Story', function () {
             expect(headerComedy).toHaveTextContaining(exp.names.shrek);
         });
 
-        it('TC-7.015 Verify that if Hero\'s name is entered with lower case it displays with capital letter in the story', function () {
+        it.skip('TC-7.015 Verify that if Hero\'s name is entered with lower case it displays with capital letter in the story', function () {
             inputValues4andClick(data.names.shrek, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
             const headerComedy = $(sel.story.textOfStory);
             expect(headerComedy).toHaveTextContaining(exp.names.Shrek);
@@ -63,7 +63,7 @@ describe('Regression. Test suite for Element Story', function () {
     });
 
     describe('Image in Story', function () {
-        it('TC-7.018 Verify that image is present', function () {
+        it.skip('TC-7.018 Verify that image is present', function () {
             inputValues4(data.names.shrek, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
             uploadingImage(data.images.shrekPng);
             $(sel.createButton).click();
@@ -72,7 +72,7 @@ describe('Regression. Test suite for Element Story', function () {
             expect(imageInStoryPresent).toEqual(true);
         });
 
-        it('TC-7.019 Verify that image is not present', function () {
+        it.skip('TC-7.019 Verify that image is not present', function () {
             inputValues4andClick(data.names.shrek, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
             const imageCheck = $(sel.story.image).getAttribute('src');
             const imageInStoryAbsent = imageCheck === exp.story.srcIfNoImageInStory;

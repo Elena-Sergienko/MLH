@@ -44,7 +44,7 @@ describe('Inputs', function () {
             const label = $(sel.createButton).isDisplayed();
             expect(label).toEqual(true);
         });
-        it('TC-8.002 Verify that submit button name is "Create!"', function () {
+        it.skip('TC-8.002 Verify that submit button name is "Create!"', function () {
             const label = $(sel.createButton).getText();
             expect(label).toEqual(exp.createButton);
         });
