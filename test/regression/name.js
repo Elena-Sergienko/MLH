@@ -119,13 +119,13 @@ describe('Regression. Name', function () {
                 expect(getName).toEqual(exp.names.withSpace);
             });
 
-            it('TC-2.012 Verify that if input value is no longer than 70 symbols (digits)', function () {
+            it.skip('TC-2.012 Verify that if input value is no longer than 70 symbols (digits)', function () {
                 $(sel.inputFields.name).setValue(data.names.d71);
                 const getName = $(sel.inputFields.name).getValue();
                 expect(getName).toEqual(exp.names.d70);
             });
 
-            it('TC-2.012.1 Verify that if input value is no longer than 70 symbols (letters)', function () {
+            it.skip('TC-2.012.1 Verify that if input value is no longer than 70 symbols (letters)', function () {
                 $(sel.inputFields.name).setValue(data.names.l70 + data.names.letters[18]);
                 const getName = $(sel.inputFields.name).getValue();
                 expect(getName).toEqual(exp.names.l70);

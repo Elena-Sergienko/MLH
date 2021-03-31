@@ -10,7 +10,7 @@ describe('Regression. Age', function () {
     });
 
     describe('Test suite for Element Age', function () {
-        it('TC-4.005 Verify that integer increases by 1 if clicking <+> on spinner button', function () {
+        it.skip('TC-4.005 Verify that integer increases by 1 if clicking <+> on spinner button', function () {
             $(sel.inputFields.age).setValue(data.ages.n20);
             $(sel.ageClick.up).click();
             $(sel.ageClick.up).click();
@@ -18,15 +18,16 @@ describe('Regression. Age', function () {
             expect(age).toEqual(exp.ages.n22);
         });
 
-        it('TC-4.006 Verify that number decreases by 1 if clicking <-> on spinner button', function () {
+        it.skip('TC-4.006 Verify that number decreases by 1 if clicking <-> on spinner button', function () {
             $(sel.inputFields.age).setValue(data.ages.n20);
+            $(sel.ageClick.up).moveTo();
             $(sel.ageClick.down).click();
             $(sel.ageClick.down).click();
             const age = $(sel.inputFields.age).getValue();
             expect(age).toEqual(exp.ages.n18);
         });
 
-        it('TC-4.007 Verify that when input field is empty and <+> is clicked then the value is 1', function () {
+        it.skip('TC-4.007 Verify that when input field is empty and <+> is clicked then the value is 1', function () {
             $(sel.ageClick.up).click();
             const age = $(sel.inputFields.age).getValue();
             expect(age).toEqual(exp.ages.n1);

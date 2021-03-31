@@ -69,7 +69,7 @@ describe('Regression. Submit Button', function () {
                 expect(nameNew).toEqual(exp.names.dragon);
             });
 
-            it('TC-8.009.2 Verify that 1 letter of Name can be changed before submitting', function () {
+            it.skip('TC-8.009.2 Verify that 1 letter of Name can be changed before submitting', function () {
                 inputValues4(data.names.shrek, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
 
                 $(sel.inputFields.name).click();
@@ -90,7 +90,7 @@ describe('Regression. Submit Button', function () {
                 expect(nameAge).toEqual(exp.ages.n25);
             });
 
-            it('TC-8.009.4 Verify that 1 digit of Age can be changed before submitting', function () {
+            it.skip('TC-8.009.4 Verify that 1 digit of Age can be changed before submitting', function () {
                 inputValues4(data.names.shrek, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
 
                 $(sel.inputFields.age).click();
@@ -113,6 +113,7 @@ describe('Regression. Submit Button', function () {
                 inputValues4(data.names.dragon, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
 
                 $(sel.inputFields.story).click();
+                $$(sel.typeOfStory)[data.typeOfStory.tragedy].waitForDisplayed();
                 $$(sel.typeOfStory)[data.typeOfStory.tragedy].click();
 
                 const typeOfStory = $(sel.inputFields.story).getText();

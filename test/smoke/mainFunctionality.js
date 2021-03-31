@@ -38,7 +38,7 @@ describe('Checking the main functionality', function () {
             expect(text).toEqual(true);
         });
 
-        it('TC Verify that image present in the Story', function () {
+        it.skip('TC Verify that image present in the Story', function () {
             inputValues4(data.names.Shrek, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
             uploadingImage(data.images.shrekPng);
             $(sel.createButton).click();
