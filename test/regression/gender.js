@@ -10,6 +10,27 @@ describe('Regression. Gender', function () {
         browser.refresh();
     });
 
+    describe('Gender', function () {
+        it('TC- Verify that the user can check gender "he"', function () {  // .getAttribute()
+            $$(sel.inputFields.gender)[data.gender.he].click();
+            const checked = $$(sel.inputFields.gender)[data.gender.he].getAttribute('class');
+            expect(checked).toEqual('ant-radio ant-radio-checked');
+        });
+
+        it('TC- Verify that the user can check gender "she"', function () { // .toBeChecked()
+            $$(sel.inputFields.gender)[data.gender.she].click();
+            const checked1 = $$(sel.genderIsChecked)[1];
+            expect(checked1).toBeChecked();
+        });
+
+        it('TC- Verify that the user can check gender "it"', function () {  // .isSelected()
+            $$(sel.inputFields.gender)[data.gender.it].click();
+            const checked2 = $$(sel.genderIsChecked)[2].isSelected();
+            expect(checked2).toEqual(true);
+        });
+
+    });
+
     describe('Multiple choices', function () {
         it('TC-3.006 Verify that multiple selection is not possible', function () {
             inputValues4(data.names.FIONA, data.gender.he, data.ages.n230, data.typeOfStory.comedy);
@@ -21,24 +42,19 @@ describe('Regression. Gender', function () {
     });
 
     describe('Change choices', function () {
-        it('TC-3.006.1 Verify that the selection can be changed using the keyboard arrow-right (he -> she)', function () {
+
+        it.skip('TC-3.006.1 Verify that the selection can be changed using the keyboard arrow-right (he -> she)', function () {
             $$(sel.inputFields.gender)[data.gender.he].click();
             browser.keys([code.right])
-            const checked1 = $(sel.genderChecked);
-            expect(checked1).toBeChecked();
-
-            // const checked1 = $(sel.genderChecked).getAttribute('value');
-            // expect(checked1).toEqual(exp.gender.she);
+            const checked1 = $(sel.genderChecked).getAttribute('value');
+            expect(checked1).toEqual(exp.gender.she);
         });
 
-        it('TC-3.006.2 Verify that the selection can be changed using the keyboard arrow-right (he -> she -> it)', function () {
+        it.skip('TC-3.006.2 Verify that the selection can be changed using the keyboard arrow-right (he -> she -> it)', function () {
             $$(sel.inputFields.gender)[data.gender.he].click();
             browser.keys([code.right.repeat(2)]);
-            const checked2 = $(sel.genderChecked).isSelected();
-            expect(checked2).toEqual(true);
-
-            // const checked2 = $(sel.genderChecked).getAttribute('value');
-            // expect(checked2).toEqual(exp.gender.it);
+            const checked2 = $(sel.genderChecked).getAttribute('value');
+            expect(checked2).toEqual(exp.gender.it);
         });
 
         it.skip('TC-3.006.3 Verify that the selection can be changed using the keyboard arrow-right (it -> he)', function () {

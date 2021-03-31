@@ -13,6 +13,7 @@
   },
   "textHeSheIt": "//span[@class='ant-radio']/following-sibling::span",
   "genderChecked": "//label[@class='ant-radio-wrapper ant-radio-wrapper-checked']/span/input",
+  "genderIsChecked": "label>span>input",
   "radioButtonsArray": "//span[@class='ant-radio']",
   "placeholderType": "//span[@class='ant-select-selection-placeholder']",
   "placeholderImage": "//span[@role='img']/following-sibling::div[@style='font-size: 15px;']",
@@ -39,5 +40,11 @@
     "h4": "//h4[@class='mb-4']",
     "textOfStory": "//p[@class='card-text']",
     "image": "//img[@class='error__pic mb-2']"
+  },
+  "gender": {
+    "he": "div[id='gender'] > label > span",
+    "she": "//label/span/input[@value='she']",
+    "it": "//input[@value='it']/..",
+    "inputFieldGender": ".ant-radio-inner"
   }
 }
