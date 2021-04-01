@@ -24,12 +24,12 @@ exports.config = {
         // './test/regression/*'
         // './test/smoke/*',
         // './test/smoke/inputs.js',
-        // './test/dynamicTests/e2e.js'
+        './test/dynamicTests/e2e.js'
         // './test/smoke/labels.js',
         // './test/regression/colors.js'
         // './test/regression/name.js',
         // './test/regression/age.js',
-        './test/regression/gender.js',
+        // './test/regression/gender.js',
     ],
     // Patterns to exclude.
     exclude: [

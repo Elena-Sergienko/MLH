@@ -12,8 +12,8 @@ describe('Verify the main functionality', function () {
 
         setData.forEach(function (setData) {
             it(`Verify that User can create, read the story about hero ${setData.name} and go back to the main page `, function () {
-                const story = $(sel.story.textOfStory);
                 inputValues4andClick(setData.name, setData.gender, setData.age, setData.story);
+                const story = $(sel.story.textOfStory);
                 expect(story).toBeDisplayed();
                 expect(story).toHaveTextContaining(setData.name);
                 expect(story).toHaveTextContaining(setData.age);
