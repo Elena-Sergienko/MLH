@@ -29,7 +29,7 @@ describe('Verify the main functionality', function () {
         beforeEach(() => {
             browser.url('');
         })
-        setDataNegative.map( el => {
+        setDataNegative.forEach( el => {
             it(`Verify that the Create button is not clickable if ${el.testCase}`, function () {
                 inputValues4(el.name, el.gender, el.age, el.story);
                 expect($(sel.createButton)).not.toBeClickable();
@@ -37,3 +37,7 @@ describe('Verify the main functionality', function () {
         });
     });
 });
+
+
+
+// https://codeburst.io/javascript-map-vs-foreach-f38111822c0f
