@@ -2,6 +2,7 @@ const sel = require('../../data/selectors.json');
 const exp = require('../../data/expected.json');
 const data = require('../../data/testData.json');
 const inputValues4andClick = require('../../helpers/inputValues4andClick');
+const nameRandom = require('../../helpers/nameRandom');
 
 describe('Regression. Name', function () {
 
@@ -12,6 +13,13 @@ describe('Regression. Name', function () {
     describe('Test suite for Element Name', function () {
 
         describe('Input field Name accepts letters', function () {
+            it('TC Verify that input field accepts 50 chars...(random)', function () {
+                let name = nameRandom(50);
+                $(sel.inputFields.name).setValue(name);
+                const getName = $(sel.inputFields.name).getValue();
+                expect(getName).toEqual(name);
+            });
+
             it('TC-2.006 Verify that input field accepts upper case letters', function () {
                 $(sel.inputFields.name).setValue(data.names.FIONA);
                 const getName = $(sel.inputFields.name).getValue();
@@ -153,8 +161,8 @@ describe('Regression. Name', function () {
                 const text = $(sel.story.textOfStory).getText();
                 const wordsInStory = text.split(' ');
                 let result = true;
-                for (let i = 0; i < wordsInStory.length; i++){
-                    if(wordsInStory[i] === ''){
+                for (let i = 0; i < wordsInStory.length; i++) {
+                    if (wordsInStory[i] === '') {
                         result = false;
                     }
                 }
