@@ -29,7 +29,7 @@ describe('Verify the main functionality', function () {
         beforeEach(() => {
             browser.url('');
         })
-        setDataNegative.forEach( el => {
+        setDataNegative.map( el => {
             it(`Verify that the Create button is not clickable if ${el.testCase}`, function () {
                 inputValues4(el.name, el.gender, el.age, el.story);
                 expect($(sel.createButton)).not.toBeClickable();
